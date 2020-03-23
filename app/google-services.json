@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "275531193458",
+    "firebase_url": "https://kkfreshfoods-f2326.firebaseio.com",
+    "project_id": "kkfreshfoods-f2326",
+    "storage_bucket": "kkfreshfoods-f2326.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:275531193458:android:bee1a9f0b116686cc376eb",
+        "android_client_info": {
+          "package_name": "com.example.kkfreshfoods"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "275531193458-i05me3kjv6dhcovt45fksln6kkiq5dqr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kkfreshfoods",
+            "certificate_hash": "2bb5273269a0d8122f9c038842e2a697c1f0d5f6"
+          }
+        },
+        {
+          "client_id": "275531193458-phbahteb7bjstqcdv42d5h3unt18vinc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYKoSkjWx_K8VGRzEbB3ZBAL6awnXNBEg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "275531193458-phbahteb7bjstqcdv42d5h3unt18vinc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
