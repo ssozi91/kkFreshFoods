@@ -74,8 +74,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             {
                 if (!type.equals("Admin"))
                 {
-                    //Intent intent = new Intent(HomeActivity.this, CartActivity.class);
-                    //startActivity(intent);
+                    Intent intent = new Intent(HomeActivity.this, CartActivity.class);
+                    startActivity(intent);
                 }
             }
         });
@@ -128,28 +128,29 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                     {
                         holder.txtProductName.setText(model.getPname());
                         holder.txtProductDescription.setText(model.getDescription());
-                        holder.txtProductPrice.setText("Price = " + model.getPrice() + "£");
+                        holder.txtProductPrice.setText("Price = "+ "£"+ model.getPrice());
                         Picasso.get().load(model.getImage()).into(holder.imageView);
 
 
-                        /*holder.itemView.setOnClickListener(new View.OnClickListener() {
+                        holder.itemView.setOnClickListener(new View.OnClickListener()
+                        {
                             @Override
                             public void onClick(View view)
                             {
-                                if (type.equals("Admin"))
+                                /*if (type.equals("Admin"))
                                 {
                                     Intent intent = new Intent(HomeActivity.this, AdminMaintainProductsActivity.class);
                                     intent.putExtra("pid", model.getPid());
                                     startActivity(intent);
                                 }
                                 else
-                                {
+                                {*/
                                     Intent intent = new Intent(HomeActivity.this, ProductDetailsActivity.class);
                                     intent.putExtra("pid", model.getPid());
                                     startActivity(intent);
-                                }
+                               // }
                             }
-                        });*/
+                        });
                     }
 
                     @NonNull
@@ -208,7 +209,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-       /* if (id == R.id.nav_cart)
+       if (id == R.id.nav_cart)
         {
             if (!type.equals("Admin"))
             {
@@ -224,7 +225,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent);
             }
         }
-        else if (id == R.id.nav_categories)
+        /*else if (id == R.id.nav_categories)
         {
 
         }*/
