@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.kkfreshfoods.Admin.AdminCategoryActivity;
 import com.example.kkfreshfoods.Model.Users;
 import com.example.kkfreshfoods.Prevalent.Prevalent;
 import com.google.firebase.database.DataSnapshot;
@@ -48,6 +49,7 @@ public class LoginActivity extends AppCompatActivity
         InputPhoneNumber = (EditText) findViewById(R.id.login_phone_number_input);
         AdminLink = (TextView) findViewById(R.id.admin_panel_link);
         NotAdminLink = (TextView) findViewById(R.id.not_admin_panel_link);
+        ForgetPasswordLink = findViewById(R.id.forget_password_link);
 
         loadingBar = new ProgressDialog(this);
 
@@ -61,6 +63,16 @@ public class LoginActivity extends AppCompatActivity
             public void onClick(View view)
             {
                 LoginUser();
+            }
+        });
+
+        ForgetPasswordLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(LoginActivity.this, ResetPasswordActivity.class);
+                intent.putExtra("check", "login");
+                startActivity(intent);
             }
         });
 

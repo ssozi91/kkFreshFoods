@@ -1,4 +1,4 @@
-package com.example.kkfreshfoods;
+package com.example.kkfreshfoods.Admin;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kkfreshfoods.Model.AdminOrders;
+import com.example.kkfreshfoods.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;

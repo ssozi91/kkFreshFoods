@@ -1,4 +1,4 @@
-package com.example.kkfreshfoods;
+package com.example.kkfreshfoods.Admin;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kkfreshfoods.Model.Cart;
+import com.example.kkfreshfoods.R;
 import com.example.kkfreshfoods.ViewHolder.CartViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;

@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.kkfreshfoods.Admin.AdminMaintainProductsActivity;
 import com.example.kkfreshfoods.Model.Products;
 import com.example.kkfreshfoods.ViewHolder.ProductViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -28,6 +29,8 @@ public class SearchProductsActivity extends AppCompatActivity {
     private RecyclerView searchList;
     private String SearchInput;
 
+    private String type = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +40,13 @@ public class SearchProductsActivity extends AppCompatActivity {
         SearchBtn = findViewById(R.id.search_btn);
         searchList = findViewById(R.id.search_list);
         searchList.setLayoutManager(new LinearLayoutManager(SearchProductsActivity.this));
+
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        if (bundle != null)
+        {
+            type = getIntent().getExtras().get("Admin").toString();
+        }
 
 
         SearchBtn.setOnClickListener(new View.OnClickListener() {
@@ -75,9 +85,18 @@ public class SearchProductsActivity extends AppCompatActivity {
                             @Override
                             public void onClick(View view)
                             {
-                                Intent intent = new Intent(SearchProductsActivity.this, ProductDetailsActivity.class);
-                                intent.putExtra("pid", model.getPid());
-                                startActivity(intent);
+                                if (type.equals("Admin"))
+                                {
+                                    Intent intent = new Intent(SearchProductsActivity.this, AdminMaintainProductsActivity.class);
+                                    intent.putExtra("pid", model.getPid());
+                                    startActivity(intent);
+                                }
+                                else
+                                {
+                                    Intent intent = new Intent(SearchProductsActivity.this, ProductDetailsActivity.class);
+                                    intent.putExtra("pid", model.getPid());
+                                    startActivity(intent);
+                                }
                             }
                         });
                     }

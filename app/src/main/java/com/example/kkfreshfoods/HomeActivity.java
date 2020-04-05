@@ -18,6 +18,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.kkfreshfoods.Admin.AdminMaintainProductsActivity;
 import com.example.kkfreshfoods.Model.Products;
 import com.example.kkfreshfoods.Prevalent.Prevalent;
 import com.example.kkfreshfoods.ViewHolder.ProductViewHolder;
@@ -137,18 +138,18 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                             @Override
                             public void onClick(View view)
                             {
-                                /*if (type.equals("Admin"))
+                                if (type.equals("Admin"))
                                 {
                                     Intent intent = new Intent(HomeActivity.this, AdminMaintainProductsActivity.class);
                                     intent.putExtra("pid", model.getPid());
                                     startActivity(intent);
                                 }
                                 else
-                                {*/
+                                {
                                     Intent intent = new Intent(HomeActivity.this, ProductDetailsActivity.class);
                                     intent.putExtra("pid", model.getPid());
                                     startActivity(intent);
-                               // }
+                                }
                             }
                         });
                     }
@@ -192,12 +193,16 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     {
         int id = item.getItemId();
 
-//        if (id == R.id.action_settings)
-//        {
-//            return true;
-//        }
+
+/*
+        if (id == R.id.action_settings)
+        {
+            return true;
+        }
+*/
 
         return super.onOptionsItemSelected(item);
+
     }
 
 
@@ -219,17 +224,23 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         }
         else if (id == R.id.nav_search)
         {
-            if (!type.equals("Admin"))
-            {
+            if (!type.equals("Admin")) {
+                Intent intent = new Intent(HomeActivity.this, SearchProductsActivity.class);
+                intent.putExtra("Admin", type);
+                startActivity(intent);
+
+            }
+            else{
+
                 Intent intent = new Intent(HomeActivity.this, SearchProductsActivity.class);
                 startActivity(intent);
             }
         }
-        /*else if (id == R.id.nav_categories)
+        else if (id == R.id.nav_categories)
         {
 
-        }*/
-        /*else*/ if (id == R.id.nav_settings)
+        }
+        else if (id == R.id.nav_settings)
         {
             if (!type.equals("Admin"))
             {
@@ -250,8 +261,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             }
         }
 
-        /*DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);*/
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 }

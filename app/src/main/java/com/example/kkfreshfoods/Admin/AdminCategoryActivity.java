@@ -1,4 +1,4 @@
-package com.example.kkfreshfoods;
+package com.example.kkfreshfoods.Admin;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.kkfreshfoods.HomeActivity;
+import com.example.kkfreshfoods.MainActivity;
+import com.example.kkfreshfoods.R;
 
 public class AdminCategoryActivity extends AppCompatActivity {
 
