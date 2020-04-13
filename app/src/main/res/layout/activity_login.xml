@@ -9,12 +9,11 @@
 
     <ImageView
         android:id="@+id/login_applogo"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:src="@drawable/applogo"
+        android:layout_width="317dp"
+        android:layout_height="140dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="160dp"
-        />
+        android:layout_marginTop="100dp"
+        android:src="@drawable/applogo" />
 
     <EditText
         android:id="@+id/login_phone_number_input"
@@ -97,7 +96,7 @@
         android:textAllCaps="false"
         android:textSize="18sp"
         android:text="Login"
-        android:textColor="@android:color/white"
+        android:textColor="@color/colorPrimaryDark"
         />
 
     <TextView

@@ -125,7 +125,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
                     {
                         Toast.makeText(ResetPasswordActivity.this, "Security Question verified set successful", Toast.LENGTH_SHORT).show();
 
-                        Intent intent = new Intent(ResetPasswordActivity.this, HomeActivity.class);
+                        Intent intent = new Intent(ResetPasswordActivity.this, SettingsActivity.class);
                         startActivity(intent);
                     }
                 }
@@ -208,7 +208,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
                             }
                             else if (!ans2.equals(answer2))
                             {
-                                Toast.makeText(ResetPasswordActivity.this, "Answer to Who is your favorite super hero", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ResetPasswordActivity.this, "Answer to Who is your favorite super hero is wrong", Toast.LENGTH_SHORT).show();
                             }
                             else {
                                 AlertDialog.Builder builder = new AlertDialog.Builder(ResetPasswordActivity.this);
