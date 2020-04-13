@@ -34,6 +34,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
     private ElegantNumberButton numberButton;
     private TextView productPrice, productDescription, productName;
     private String productID = "", state = "Normal";
+    private String realPrice;
 
 
     @Override
@@ -95,7 +96,8 @@ public class ProductDetailsActivity extends AppCompatActivity {
         final HashMap<String, Object> cartMap = new HashMap<>();
         cartMap.put("pid", productID);
         cartMap.put("pname", productName.getText().toString());
-        cartMap.put("price", productPrice.getText().toString());
+        //cartMap.put("price", productPrice.getText().toString());
+        cartMap.put("price", realPrice.toString());
         cartMap.put("date", saveCurrentDate);
         cartMap.put("time", saveCurrentTime);
         cartMap.put("quantity", numberButton.getNumber());
@@ -144,8 +146,10 @@ public class ProductDetailsActivity extends AppCompatActivity {
                 {
                     Products products = dataSnapshot.getValue(Products.class);
 
+                    realPrice = products.getPrice();
+
                     productName.setText(products.getPname());
-                    productPrice.setText("£"+products.getPrice());
+                    productPrice.setText("Price = £"+products.getPrice());
                     productDescription.setText(products.getDescription());
                     Picasso.get().load(products.getImage()).into(productImage);
                 }

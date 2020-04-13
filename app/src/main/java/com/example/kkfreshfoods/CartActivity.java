@@ -54,6 +54,14 @@ public class CartActivity extends AppCompatActivity
         txtTotalAmount = (TextView) findViewById(R.id.total_price);
         txtMsg1 = (TextView) findViewById(R.id.msg1);
 
+        if(overTotalPrice==0)
+        {
+            NextProcessBtn.setVisibility(View.INVISIBLE);
+
+        }
+
+
+
         NextProcessBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
@@ -97,7 +105,13 @@ public class CartActivity extends AppCompatActivity
                 int oneTyprProductTPrice = ((Integer.valueOf(model.getPrice()))) * Integer.valueOf(model.getQuantity());
                 overTotalPrice = overTotalPrice + oneTyprProductTPrice;
 
-                txtTotalAmount.setText("Total Price = £" + String.valueOf(overTotalPrice));
+
+                    NextProcessBtn.setVisibility(View.VISIBLE);
+                    txtTotalAmount.setText("Total Price = £" + String.valueOf(overTotalPrice));
+
+
+
+
 
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
